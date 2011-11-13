@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="MaxWit,嵌入式,Linux,Android,内核,驱动,培训,gbios,龙芯,就业实训,灵感软件,开放实验室,Conke,Tiger">
+<meta name="description" content="MaxWit,嵌入式,Linux,Android,内核,驱动,培训,gbios,龙芯,就业实训,灵感软件,开放实验室 - maxwit.com">
+<title>MaxWit魔鬼训练营</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+div.RoundedCorner{
+	background: #ffffff;
+}
+
+b.rtop, b.rbottom{
+	display:block;
+	background:#ffffff;
+}
+
+b.rtop b, b.rbottom b{
+	display:block;
+	background:#464646;
+	height: 1px;
+	overflow: hidden;
+}
+
+b.r1{margin: 0 5px}
+b.r2{margin: 0 3px}
+b.r3{margin: 0 2px}
+b.r4{margin: 0 1px}
+</style>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+	var mouseover_tid = [];
+	var mouseout_tid = [];
+
+	jQuery(document).ready(function(){
+		jQuery("#nav > li").each(function(index){
+			jQuery(this).hover(function(){
+				var _self = this;
+				clearTimeout(mouseout_tid[index]);
+				mouseout_tid[index] = setTimeout(function(){
+					jQuery(_self).find('ul:eq(0)').slideDown(200);
+				}, 0);
+			},
+			function(){
+				var _self = this;
+				clearTimeout(mouseout_tid[index]);
+				mouseout_tid[index] = setTimeout(function(){
+					jQuery(_self).find('ul:eq(0)').slideUp(200);
+				}, 0);
+			});
+		});
+
+		// js for left menu
+		$('ul.menu ul').hide();
+		$.each($('ul.menu'), function(){
+			$('#' + this.id + '.expandfirst ul:first').show();
+		});
+		$('ul.menu li a').click(
+			function() {
+				var checkElement = $(this).next();
+				var parent = this.parentNode.parentNode.id;
+
+				if($('#' + parent).hasClass('noaccordion')) {
+					$(this).next().slideToggle('normal');
+					return false;
+				}
+				if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+					if($('#' + parent).hasClass('collapsible')) {
+						$('#' + parent + ' ul:visible').slideUp('normal');
+					}
+					return false;
+				}
+				if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+					$('#' + parent + ' ul:visible').slideUp('normal');
+					checkElement.slideDown('normal');
+					return false;
+				}
+			}
+		);
+	
+	});
+</script>
+
+</head>
+
+<body class="home">
+<div id="top">
+	<div class="headtop"></div>
+
+<ul id="nav">
+	<li class="nav_intr"><a href="introduce.html">关于MaxWit</a>
+		<ul>
+			<li><a href="introduce.html?about=overview">公司概况</a></li>
+			<li><a href="introduce.html?about=team">导师团队</a></li>
+			<li><a href="introduce.html?about=impression">MaxWit印象</a></li>
+			<li><a href="introduce.html?about=contact">联系方式</a></li>
+		</ul>
+	</li>
+	<li class="nav_trai"><a href="training.html">课程体系</a>
+		<ul>
+			<li><a href="training.html?class=advanced">全日制高端培训</a></li>
+			<li><a href="training.html?class=full_time">全日制就业班（免费）</a></li>
+			<li><a href="training.html?class=weekend">周末专项强化班</a></li>
+		</ul>
+	</li>
+	<li class="nav_recu"><a href="jiuye.html">招生就业</a>
+		<ul>
+			<li><a href="jiuye.html?recurit=info">近期开课信息</a></li>
+			<li><a href="jiuye.html?recurit=flow">报名及入学流程</a></li>
+			<li><a href="jiuye.html?recurit=salary">历届学生就业情况</a></li>
+			<li><a href="jiuye.html?recurit=faq">招生问答</a></li>
+		</ul>
+	</li>
+	<li><a href="service.html">企业人才服务</a>
+		<ul>
+			<li><a href="service.html?service=training">企业内部培训</a></li>
+			<li><a href="service.html?service=trust">企业人才委托培养</a></li>
+			<li><a href="service.html?service=recommend">人才推荐</a></li>
+			<li><a href="service.html?service=dispatch">人才外派</a></li>
+		</ul>
+	</li>
+	<li><a href="opensour_project.html">开源项目</a>
+		<ul>
+			<li><a href="opensour_project.html?project=gbios">g-bios</a></li>
+			<li><a href="opensour_project.html?project=lablin">Lablin</a></li>
+			<li><a href="opensour_project.html?project=powertool">PowerTool</a></li>
+		</ul>
+	</li>
+	<li><a href="document.html">文档资料</a>
+		<ul>
+			<li><a href="document.html?doc=introduction">XXX快速入门</a></li>
+			<li><a href="document.html?doc=gbios">g-bios开发者手册</a></li>
+		</ul>
+	</li>
+	<li><a href="contact.html">联系我们</a>
+		<ul>
+			<li><a href="contact.html?contact=mode">联系方式</a></li>
+			<li><a href="contact.html?contact=path">乘车路线</a></li>
+			<li><a href="http://www.maxwit.com/bbs">MaxWit论坛</a></li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+<div style="overflow:auto; text-align:left; padding-top:5px">
+<div class="left_menu">
+	<ul id="menu3" class="menu">
+		<li class="li_d" id="hg">
+			<a href="#" onclick="show(this, 1)">关于MaxWit</a>
+			<ul>
+				<li><a href="#" onclick="show(this, 1)">公司概况</a></li>
+				<li><a href="#" onclick="show(this, 2)">班级设置</a></li>
+				<li><a href="#" onclick="show(this, 3)">导师团队</a></li>
+				<li><a href="#" onclick="show(this, 4)">联系方式</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#" onclick="show(this, 4)">全日制就业班</a>
+			<ul>
+				<li><a href="#" onclick="show(this, 5)">嵌入式Linux就业班</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#" onclick="show(this, 6)">全日制强化班</a>
+			<ul>
+				<li><a href="#" onclick="show(this, 6)">嵌入式操作系统</a></li>
+				<li><a href="#" onclick="show(this, 7)">计算机网络</a></li>
+				<li><a href="#" onclick="show(this, 8)">计算机可视化及多媒体</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#" onclick="show(this, 9)">周末强化班</a>
+			<ul>
+			</ul>
+		</li>
+        <li>
+            <a href="#" onclick="show(this, 10)">招生</a>
+            <ul>
+                <li><a href="#" onclick="show(this, 10)">招生简章</a></li>
+                <li><a href="#" onclick="show(this, 11)">报名流程</a></li>
+                <li><a href="#" onclick="show(this, 12)">申请书和入学考试要求</a></li>
+                <li><a href="#" onclick="show(this, 13)">免试入学的说明</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" onclick="show(this, 14)">就业</a>
+            <ul>
+                <li><a href="#" onclick="show(this, 14)">就业安排</a></li>
+                <li><a href="#" onclick="show(this, 15)">历届学员就业情况统计</a></li>
+            </ul>
+        </li>
+	</ul>	
+</div> <!--end of left_menu-->
+
+<div class="content">
+<!--在此添加各个文本-->
+<div class="RoundedCorner">
+<b class="rtop">
+	<b class="r1"></b>
+	<b class="r2"></b>
+	<b class="r3"></b>
+	<b class="r4"></b>
+</b>
+
+<div>
+<!--在下面添加文章内容-->
+<h1 align="center">[全日制] “嵌入式Linux内核/驱动开发班”7月热招</h1>
+<span style="font-size: 12pt; color: red;">由</span></b><b><span style="font-size: 12pt; color: red;" lang="EN-US">Intel</span></b><b><span style="font-size: 12pt; color: red;">资深工程师</span></b><b><span style="font-size: 12pt; color: red;" lang="EN-US">Conke Hu和<span style="font-size: 12pt; color: red;" lang="EN-US">Qualcomm</span><b><span style="font-size: 12pt; color: red;">资深工程师</span></b><b><span style="font-size: 12pt; color: red;" lang="EN-US">Tiger Yu</span></b></span></b><b><span style="font-size: 12pt; color: red;">主讲！</span></b><b><span style="font-size: 12pt; color: red;">全程手把手式辅导</span></b></span><b><span style="font-size: 12pt; color: red; font-family: Arial;" lang="EN-US"><o:p></o:p></span></b></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-family: Arial;"><span style="font-size: 12pt; color: red;" lang="EN-US"><o:p>&nbsp;</o:p></span></span><span style="font-size: 12pt; color: red;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%; text-align: center;" align="center"><span style="font-family: Arial;"><span style="font-size: 15pt; color: rgb(69, 69, 69); line-height: 200%;">嵌入式<span lang="EN-US">Linux</span>内核<span lang="EN-US">/</span>驱动开发班</span></span><span style="font-size: 15pt; color: rgb(69, 69, 69); line-height: 200%; font-family: 黑体;"><span lang="EN-US"><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%; text-align: center;" align="center"><span style="font-family: Arial;"><span style="font-size: 15pt; color: rgb(69, 69, 69); line-height: 200%;">招生简章</span></span><span style="font-size: 9pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 21pt;"><span style="font-family: Arial;"><span style="font-size: 12pt;">目前，嵌入式软件开发人才炙手可热，其中内核开发人员更是高薪难聘。无论是薪资还是发展空间，嵌入式内核开发职位都是整个<span lang="EN-US">IT</span>行业中最有前途的一个方向，</span><span style="font-size: 12pt;">此类职位的技能要求与薪资水平都相对较高，而能达到要求的应聘者数量极少。这意味着你将拥有很强的竞争力和广阔的发展前途。</span></span><span style="font-size: 12pt; font-family: 幼圆;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 21pt;"><span style="font-family: Arial;"><span style="font-size: 12pt;">嵌入式<span lang="EN-US">Linux</span>内核<span lang="EN-US">/</span>驱动开发班（以下简称“内核开发班”）旨在</span><span style="font-size: 12pt;">研究嵌入式核心技术，培养高端人才。</span><span style="font-size: 12pt;" lang="EN-US">MaxWit</span><span style="font-size: 12pt;">的内核开发班是国内唯一</span><span style="font-size: 12pt;">真正的</span><span style="font-size: 12pt;" lang="EN-US">Linux</span><span style="font-size: 12pt;">内核培训，也是业界最高端的嵌入式<span lang="EN-US">Linux</span>培训，全部由最具价值的课程模块组成，包括：<span lang="EN-US">ARM</span>高级汇编语言程序设计、</span><span style="font-size: 12pt;" lang="EN-US">C</span><span style="font-size: 12pt;">语言编译原理、</span><span style="font-size: 12pt;" lang="EN-US">ARM</span><span style="font-size: 12pt;">体系结构、</span><span style="font-size: 12pt;" lang="EN-US">Bootloader</span><span style="font-size: 12pt;">开发、</span><span style="font-size: 12pt;" lang="EN-US">TCP/IP</span><span style="font-size: 12pt;">协议栈的设计与具体实现、</span><span style="font-size: 12pt;" lang="EN-US">Linux 2.6</span><span style="font-size: 12pt;">内核源码彻底剖析、多种大型</span><span style="font-size: 12pt;" lang="EN-US">Linux</span><span style="font-size: 12pt;">设备驱动开发等（详见课程大纲）。内核开发班教学全程采用项目实战方式而不是传统的面向知识点的方式，高端项目研发贯穿于整个培训过程，所有学员都将直接参与国际性开源项目：<span lang="EN-US">Linux Kernel</span>、<span lang="EN-US">g-bios</span>、<span lang="EN-US">Qemu</span>、<span lang="EN-US">GNU Toolchain</span>等。</span></span><span style="font-size: 12pt; font-family: 宋体;"><span lang="EN-US"><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 21pt;"><span style="font-family: Arial;"><span style="font-size: 12pt;">如前所述，内核开发班的目标是培养高端人才，而不仅仅是简单地解决就业问题。就业不是我们的目标，高薪也不是问题，你的实力决定了这一切！</span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 24pt;"><span style="font-family: Arial;"><span style="font-size: 12pt;" lang="EN-US"><o:p>&nbsp;</o:p></span></span><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></p>
+<span style="font-family: Arial;"><span>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><strong><font face="Times New Roman"><span style="font-size: 12pt; font-family: 幼圆;">培训对象：</span></font></strong><font face="Times New Roman"><span style="font-size: 12pt; font-family: 宋体;" lang="EN-US"><o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 21pt; line-height: 16.5pt; text-align: left;" align="left"><font face="Times New Roman"><span style="font-size: 12pt; font-family: 幼圆;">理工类本科及以上学历（在校或历届均可）</span><span style="font-size: 12pt; font-family: 宋体;" lang="EN-US"><o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 18pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; font-family: Arial;" lang="EN-US">(1) </span><font face="Times New Roman"><span style="font-size: 12pt; font-family: 幼圆;">有相当扎实的程序设计基础（语言不限）</span><span style="font-size: 12pt; font-family: 宋体;" lang="EN-US"><o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 18pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; font-family: Arial;" lang="EN-US">(2) </span><font face="Times New Roman"><span style="font-size: 12pt; font-family: 幼圆;">英语四级或同等水平，能读写英语文档</span><span style="font-size: 12pt; font-family: 宋体;" lang="EN-US"><o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 18pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; font-family: Arial;" lang="EN-US">(3) </span><font face="Times New Roman"><span style="font-size: 12pt; font-family: 幼圆;">对软件开发有浓厚兴趣</span><span style="font-size: 12pt; font-family: 宋体;" lang="EN-US"><o:p></o:p></span></font></p>
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 18pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; font-family: Arial;" lang="EN-US">(4) </span><font face="Times New Roman"><span style="font-size: 12pt; font-family: 幼圆;">有很好的口头及书面表达能力</span><span style="font-size: 12pt; font-family: 宋体;" lang="EN-US"><o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 18pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; font-family: Arial;" lang="EN-US">(5) </span><span style="font-size: 12pt; font-family: 幼圆;"><font face="Times New Roman">极能吃苦，乐于交流，待人友善，有</font></span><span style="font-size: 12pt; font-family: Arial;" lang="EN-US">teamwork</span><font face="Times New Roman"><span style="font-size: 12pt; font-family: 幼圆;">精神</span><span style="font-size: 12pt; font-family: 宋体;" lang="EN-US"><o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; font-family: 宋体;" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><strong><font face="Times New Roman"><span style="font-size: 12pt; font-family: 幼圆;">培训时间：</span></font></strong><font face="Times New Roman"><span style="font-size: 12pt; font-family: 宋体;" lang="EN-US"><o:p></o:p></span></font></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 24pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; color: black;">
+<span class="Apple-style-span" style="font-size: 14px;"><span style="font-size: 12pt; color: black;" lang="EN-US">2011</span><span style="font-size: 12pt; color: black;">年7月11日～2011年11月10日</span></span>，共                    
+</span><span style="font-size: 12pt; color: black;" lang="EN-US">4</span><span style="font-size: 12pt; color: black;">个月</span><span style="font-size: 12pt;" lang="EN-US"><o:p></o:p></span></p>
+
+</span></span><span style="font-family: Arial;"><span>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span lang="EN-US"><o:p><font face="Times New Roman" size="3">&nbsp;</font></o:p></span><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p><strong>&nbsp;</strong></o:p></span></o:p></span></o:p></span></o:p></span></p>
+</span></span>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;">&nbsp;<span style="font-family: Arial;"><b><span style="font-size: 12pt;">培训地点：</span></b></span><b><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></b></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 21pt;"><span style="font-family: Arial;"><span style="font-size: 12pt;">上海市张江高科园区郭守敬路</span><span style="font-size: 12pt;" lang="EN-US">498</span><span style="font-size: 12pt;">号浦东软件园</span><span style="font-size: 12pt;" lang="EN-US">21</span><span style="font-size: 12pt;">号楼</span><span style="font-size: 12pt;" lang="EN-US">106</span><span style="font-size: 12pt;">室</span></span><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-family: Arial;"><span style="font-size: 12pt;" lang="EN-US"><o:p>&nbsp;</o:p></span></span><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-family: Arial;"><b><span style="font-size: 12pt;">培训内容：</span></b></span><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-indent: 21pt;"><span style="font-family: Arial;"><span style="font-size: 12pt;" lang="EN-US">ARM</span><span style="font-size: 12pt;">体系结构及</span><span style="font-size: 12pt;" lang="EN-US">Linux</span><span style="font-size: 12pt;">内核</span><span style="font-size: 12pt;" lang="EN-US">/</span><span style="font-size: 12pt;">驱动开发等（详见课程大纲）</span></span><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-family: Arial;"><span style="font-size: 12pt;" lang="EN-US"><o:p>&nbsp;</o:p></span></span><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-family: Arial;"><b><span style="font-size: 12pt;">项目实战：</span></b></span><b><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></b></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 39pt; text-indent: -18pt;"><span style="font-family: Arial;"><span style="font-size: 12pt;" lang="EN-US"><span>1、<span style="font: 7pt 'Times New Roman';">&nbsp; </span></span></span><span style="font-size: 12pt;">最新开源</span><span style="font-size: 12pt;" lang="EN-US">Bootloader</span><span style="font-size: 12pt;">项目</span><span style="font-size: 12pt;" lang="EN-US">g-bios</span><span style="font-size: 12pt;">开发</span></span><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 39pt; text-indent: -18pt;"><span style="font-family: Arial;"><span style="font-size: 12pt;" lang="EN-US"><span>2、<span style="font: 7pt 'Times New Roman';">&nbsp; </span></span></span><span style="font-size: 12pt;" lang="EN-US">Lablin for MID</span><span style="font-size: 12pt;">开发</span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt 39pt; text-indent: -18pt;"><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;">&nbsp;</p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><b><span style="font-size: 12pt; font-family: 幼圆;">培训费用：</span></b><b><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></b></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span class="Apple-style-span" style="font-size: 16px;"><span class="Apple-style-span">&nbsp;&nbsp; &nbsp; &nbsp; 16,800</span>元人民币 （正式开课后试听2周，第2周结束时一次性付清学费）&nbsp;</span><font class="Apple-style-span" size="3"><br>
+</font></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;">&nbsp;&nbsp;<font class="Apple-style-span" face="Arial" size="3"><br>
+</font></p>
+<p class="MsoNormal" style="font-size: 12pt; margin: 0cm 0cm 0pt; font-family: Arial;"><span style="font-family: Arial;"><b><span style="font-size: 12pt;">咨询与报名：</span></b></span><b><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></b></p>
+<p class="MsoNormal" style="font-size: 12pt; margin: 0cm 0cm 0pt; text-indent: 21pt; font-family: Arial;"><span style="font-family: Arial;"><span style="font-size: 12pt;">电话：</span><span style="font-size: 12pt;" lang="EN-US">(021)50803198 </span><span style="font-size: 12pt;">、</span><span style="font-size: 12pt;" lang="EN-US">400-816-1006</span></span><span style="font-size: 12pt; font-family: Arial;" lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="font-size: 12pt; margin: 0cm 0cm 0pt; text-indent: 21pt; font-family: Arial;"><span style="font-family: Arial;"><span style="font-size: 12pt;">Q&nbsp; Q：1160515034、1466523858</span></span></p>
+<p class="MsoNormal" style="font-size: 12pt; margin: 0cm 0cm 0pt; text-indent: 21pt; font-family: Arial;">&nbsp;</p>
+<p class="MsoNormal" style="font-size: 12pt; margin: 0cm 0cm 0pt; text-indent: 21pt; font-family: Arial;">&nbsp;</p>
+<p class="MsoNormal" style="font-size: 12pt; margin: 0cm 0cm 0pt; text-indent: 21pt; text-align: center; font-family: Arial;"><span style="font-family: Arial;"><b><span style="font-size: 15pt; color: red;">郑重声明</span></b></span><b><span style="font-size: 15pt; color: red; font-family: 黑体;"><span lang="EN-US"><o:p></o:p></span></span></b></p>
+<p class="MsoNormal" style="font-size: 12pt; margin: 0cm 0cm 0pt; text-indent: 27.55pt; font-family: Arial;"><span style="font-family: Arial;"><b><span style="font-size: 14pt; color: red;">在整个培训过程中，学员若对<span lang="EN-US">MaxWit</span>的培训质量有任何不满意，可当场无条件<span lang="EN-US">100%</span>全额退费！</span>
+<!--在上面添加文章内容-->
+</div>
+
+<b class="rbottom">
+	<b class="r4"></b>
+	<b class="r3"></b>
+	<b class="r2"></b>
+	<b class="r1"></b>
+</b>
+</div>
+</div> <!--end right table-->
+
+</div>
+
+<div align="center">
+<div id = "foot">
+<a href="#">网站地图</a> | <a href="#">人才招聘</a> | <a href="#">关于我们</a> | <br>
+上海市张江高科园区郭守敬路498号浦东软件园21号楼106室　联系电话：021-50803198　400-816-1006 <br>
+灵感软件（上海）有限公司版权所有 <a target="_blank" href="http://www.miibeian.gov.cn">沪ICP备10012836号</a>
+</div>
+</div>
+</body>
+</html>

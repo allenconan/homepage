@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="MaxWit,嵌入式,Linux,Android,内核,驱动,培训,gbios,龙芯,就业实训,灵感软件,开放实验室,Conke,Tiger">
+<meta name="description" content="MaxWit,嵌入式,Linux,Android,内核,驱动,培训,gbios,龙芯,就业实训,灵感软件,开放实验室 - maxwit.com">
+<title>MaxWit魔鬼训练营</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+div.RoundedCorner{
+	background: #ffffff;
+}
+
+b.rtop, b.rbottom{
+	display:block;
+	background:#ffffff;
+}
+
+b.rtop b, b.rbottom b{
+	display:block;
+	background:#464646;
+	height: 1px;
+	overflow: hidden;
+}
+
+b.r1{margin: 0 5px}
+b.r2{margin: 0 3px}
+b.r3{margin: 0 2px}
+b.r4{margin: 0 1px}
+</style>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+	var mouseover_tid = [];
+	var mouseout_tid = [];
+
+	jQuery(document).ready(function(){
+		jQuery("#nav > li").each(function(index){
+			jQuery(this).hover(function(){
+				var _self = this;
+				clearTimeout(mouseout_tid[index]);
+				mouseout_tid[index] = setTimeout(function(){
+					jQuery(_self).find('ul:eq(0)').slideDown(200);
+				}, 0);
+			},
+			function(){
+				var _self = this;
+				clearTimeout(mouseout_tid[index]);
+				mouseout_tid[index] = setTimeout(function(){
+					jQuery(_self).find('ul:eq(0)').slideUp(200);
+				}, 0);
+			});
+		});
+
+		// js for left menu
+		$('ul.menu ul').hide();
+		$.each($('ul.menu'), function(){
+			$('#' + this.id + '.expandfirst ul:first').show();
+		});
+		$('ul.menu li a').click(
+			function() {
+				var checkElement = $(this).next();
+				var parent = this.parentNode.parentNode.id;
+
+				if($('#' + parent).hasClass('noaccordion')) {
+					$(this).next().slideToggle('normal');
+					return false;
+				}
+				if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+					if($('#' + parent).hasClass('collapsible')) {
+						$('#' + parent + ' ul:visible').slideUp('normal');
+					}
+					return false;
+				}
+				if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+					$('#' + parent + ' ul:visible').slideUp('normal');
+					checkElement.slideDown('normal');
+					return false;
+				}
+			}
+		);
+	
+	});
+</script>
+
+</head>
+
+<body class="home">
+<div id="top">
+	<div class="headtop"></div>
+
+<ul id="nav">
+	<li class="nav_intr"><a href="introduce.html">关于MaxWit</a>
+		<ul>
+			<li><a href="introduce.html?about=overview">公司概况</a></li>
+			<li><a href="introduce.html?about=team">导师团队</a></li>
+			<li><a href="introduce.html?about=impression">MaxWit印象</a></li>
+			<li><a href="introduce.html?about=contact">联系方式</a></li>
+		</ul>
+	</li>
+	<li class="nav_trai"><a href="training.html">课程体系</a>
+		<ul>
+			<li><a href="training.html?class=advanced">全日制高端培训</a></li>
+			<li><a href="training.html?class=full_time">全日制就业班（免费）</a></li>
+			<li><a href="training.html?class=weekend">周末专项强化班</a></li>
+		</ul>
+	</li>
+	<li class="nav_recu"><a href="jiuye.html">招生就业</a>
+		<ul>
+			<li><a href="jiuye.html?recurit=info">近期开课信息</a></li>
+			<li><a href="jiuye.html?recurit=flow">报名及入学流程</a></li>
+			<li><a href="jiuye.html?recurit=salary">历届学生就业情况</a></li>
+			<li><a href="jiuye.html?recurit=faq">招生问答</a></li>
+		</ul>
+	</li>
+	<li><a href="service.html">企业人才服务</a>
+		<ul>
+			<li><a href="service.html?service=training">企业内部培训</a></li>
+			<li><a href="service.html?service=trust">企业人才委托培养</a></li>
+			<li><a href="service.html?service=recommend">人才推荐</a></li>
+			<li><a href="service.html?service=dispatch">人才外派</a></li>
+		</ul>
+	</li>
+	<li><a href="opensour_project.html">开源项目</a>
+		<ul>
+			<li><a href="opensour_project.html?project=gbios">g-bios</a></li>
+			<li><a href="opensour_project.html?project=lablin">Lablin</a></li>
+			<li><a href="opensour_project.html?project=powertool">PowerTool</a></li>
+		</ul>
+	</li>
+	<li><a href="document.html">文档资料</a>
+		<ul>
+			<li><a href="document.html?doc=introduction">XXX快速入门</a></li>
+			<li><a href="document.html?doc=gbios">g-bios开发者手册</a></li>
+		</ul>
+	</li>
+	<li><a href="contact.html">联系我们</a>
+		<ul>
+			<li><a href="contact.html?contact=mode">联系方式</a></li>
+			<li><a href="contact.html?contact=path">乘车路线</a></li>
+			<li><a href="http://www.maxwit.com/bbs">MaxWit论坛</a></li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+<div style="overflow:auto; text-align:left; padding-top:5px">
+<div class="left_menu">
+	<ul id="menu3" class="menu">
+		<li class="li_d" id="hg">
+			<a href="#" onclick="show(this, 1)">关于MaxWit</a>
+			<ul>
+				<li><a href="#" onclick="show(this, 1)">公司概况</a></li>
+				<li><a href="#" onclick="show(this, 2)">班级设置</a></li>
+				<li><a href="#" onclick="show(this, 3)">导师团队</a></li>
+				<li><a href="#" onclick="show(this, 4)">联系方式</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#" onclick="show(this, 4)">全日制就业班</a>
+			<ul>
+				<li><a href="#" onclick="show(this, 5)">嵌入式Linux就业班</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#" onclick="show(this, 6)">全日制强化班</a>
+			<ul>
+				<li><a href="#" onclick="show(this, 6)">嵌入式操作系统</a></li>
+				<li><a href="#" onclick="show(this, 7)">计算机网络</a></li>
+				<li><a href="#" onclick="show(this, 8)">计算机可视化及多媒体</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#" onclick="show(this, 9)">周末强化班</a>
+			<ul>
+			</ul>
+		</li>
+        <li>
+            <a href="#" onclick="show(this, 10)">招生</a>
+            <ul>
+                <li><a href="#" onclick="show(this, 10)">招生简章</a></li>
+                <li><a href="#" onclick="show(this, 11)">报名流程</a></li>
+                <li><a href="#" onclick="show(this, 12)">申请书和入学考试要求</a></li>
+                <li><a href="#" onclick="show(this, 13)">免试入学的说明</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" onclick="show(this, 14)">就业</a>
+            <ul>
+                <li><a href="#" onclick="show(this, 14)">就业安排</a></li>
+                <li><a href="#" onclick="show(this, 15)">历届学员就业情况统计</a></li>
+            </ul>
+        </li>
+	</ul>	
+</div> <!--end of left_menu-->
+
+<div class="content">
+<!--在此添加各个文本-->
+<div class="RoundedCorner">
+<b class="rtop">
+	<b class="r1"></b>
+	<b class="r2"></b>
+	<b class="r3"></b>
+	<b class="r4"></b>
+</b>
+
+<div>
+<!--在下面添加文章内容-->
+<h1 align="center">[周末班] Linux内核剖析及驱动开发7月热招</h1>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; line-height: 200%;">
+</p><p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; line-height: 200%;">
+</p><p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><span style="font-size: 18pt; color: rgb(69, 69, 69); line-height: 200%; font-family: 楷体_GB2312;">挑战前沿技术，打造顶尖人才——</span><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p></o:p></span></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US">&nbsp;<o:p></o:p></span></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%; text-align: center;" align="center"><span style="font-size: 15pt; color: rgb(69, 69, 69); line-height: 200%; font-family: 黑体;" lang="EN-US">[</span><span style="font-size: 15pt; color: rgb(69, 69, 69); line-height: 200%; font-family: 黑体;">周末班<span lang="EN-US">] </span><span style="font-family: Arial;"><span lang="EN-US">Linux</span></span>内核源码分析及设备驱动开发<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%; text-align: center;" align="center"><span style="font-size: 15pt; color: rgb(69, 69, 69); line-height: 200%; font-family: 黑体;">招生简章<span lang="EN-US"><o:p></o:p></span></span></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><font size="3"><strong><span style="color: rgb(69, 69, 69); font-family: 幼圆;">课程特色<span lang="EN-US">:</span></span></strong><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p></o:p></span></font></p>
+
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; text-indent: 19.85pt; line-height: 200%;"><font size="3"><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">1</span><span style="color: rgb(69, 69, 69);"><font face="宋体">、真正的</font></span><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">Linux</span><font face="宋体"><span style="color: rgb(69, 69, 69);">内核驱动开发</span><span style="color: rgb(69, 69, 69);">。所有课程均由最具价值和实战性的模块组成：</span></font><span style="color: rgb(69, 69, 69);"><span lang="EN-US">Linux</span></span><font face="宋体"><span style="color: rgb(69, 69, 69);">系统启动全过程，中断及系统调用，存储管理，进程<span lang="EN-US">/</span>线程调度，文件系统，设备驱动模型，</span></font><span style="color: rgb(69, 69, 69);"><span lang="EN-US">Linux</span></span><font face="宋体"><span style="color: rgb(69, 69, 69);">大型设备驱动开发实践。</span><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p></o:p></span></font></font></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; text-indent: 19.85pt; line-height: 200%;"><font size="3"><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">2</span><font face="宋体"><span style="color: rgb(69, 69, 69);">、</span><span style="color: rgb(69, 69, 69);">一流的导师团队。业界资深工程师</span></font><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">Conke Hu</span><span style="color: rgb(69, 69, 69);"><font face="宋体">和</font></span><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">Tiger Yu</span><font face="宋体"><span style="color: rgb(69, 69, 69);">带队，外加其他多名工程师手把手辅导，确保所有学员真正掌握</span></font><span style="color: rgb(69, 69, 69);"><span lang="EN-US">Linux</span></span><font face="宋体"><span style="color: rgb(69, 69, 69);">驱动开发。</span><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p></o:p></span></font></font></p>
+
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; text-indent: 18pt; line-height: 200%;"><font size="3"><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">3</span><font face="宋体"><span style="color: rgb(69, 69, 69);">、</span><span style="color: rgb(69, 69, 69);">所有学员都将有机会参与由</span></font><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">MaxWit</span><span style="color: rgb(69, 69, 69);"><font face="宋体">及其他开源社区主导的国际性开源项目：</font></span><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">Linux Kernel</span><span style="color: rgb(69, 69, 69);"><font face="宋体">、</font></span><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">g-bios</span><span style="color: rgb(69, 69, 69);"><font face="宋体">、</font><span lang="EN-US">Q</span></span><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">emu</span><span style="color: rgb(69, 69, 69);"><font face="宋体">、</font></span><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">GNU Toolchain</span><font face="宋体"><span style="color: rgb(69, 69, 69);">等。</span><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p></o:p></span></font></font></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; text-indent: 19.85pt; line-height: 200%;"><font size="3"><span style="color: rgb(69, 69, 69);"><font face="宋体">就业不是我们的目标，高薪也不是问题</font></span><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">——</span><font face="宋体"><span style="color: rgb(69, 69, 69);">你的技术实力已经决定了这一切。</span><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p></o:p></span></font></font></p>
+
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><font size="3"><b><span style="color: rgb(69, 69, 69); font-family: 幼圆;">培训对象：</span></b><span style="color: rgb(69, 69, 69); font-family: 幼圆;">理工类本科及以上学历（应届或历届均可），对软件开发有浓厚兴趣</span><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p></o:p></span></font></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><font size="3"><b><span style="color: rgb(69, 69, 69); font-family: 幼圆;">培训要求：</span></b><span style="color: rgb(69, 69, 69); font-family: 幼圆;">经入学测试择优录取</span><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p></o:p></span></font></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><span><font size="3"><strong>培训时间：</strong></font><span style="font-family: Arial;"><font size="3">2011年7</font></span><font size="3"><st1:chsdate month="5" isrocdate="False" islunardate="False" year="2010" day="22" w:st="on"><span style="color: rgb(69, 69, 69); font-family: 宋体;">月</span><span style="color: rgb(69, 69, 69);"><font class="Apple-style-span" face="Arial">2</font></span><span style="color: rgb(69, 69, 69); font-family: 宋体;">日正式</span></st1:chsdate><span style="color: rgb(69, 69, 69); font-family: 宋体;">开课，共</span><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">8</span><span style="color: rgb(69, 69, 69); font-family: 幼圆;"><font face="Times New Roman">周</font></span></font></span></p>
+
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><span style="font-family: Arial;"><font size="3"><b><span style="color: rgb(69, 69, 69);">培训</span></b></font></span><font size="3"><b><span style="color: rgb(69, 69, 69); font-family: 幼圆;">地点：</span></b><span style="color: rgb(69, 69, 69); font-family: 幼圆;">上海市张江高科园区郭守敬路</span><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">498</span><span style="color: rgb(69, 69, 69); font-family: 幼圆;">号浦东软件园</span><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">21</span><span style="color: rgb(69, 69, 69); font-family: 幼圆;">号楼</span><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">106</span><span style="color: rgb(69, 69, 69); font-family: 幼圆;">室</span><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p></o:p></span></font></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><font size="3"><b><span style="color: rgb(69, 69, 69); font-family: 幼圆;">培训内容：</span></b><span style="color: rgb(69, 69, 69); font-family: 幼圆;">详见大纲</span><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p></o:p></span></font></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><font size="3"><strong><span style="color: rgb(69, 69, 69); font-family: 幼圆;">培训费用：</span></strong><span style="color: rgb(69, 69, 69);"><font class="Apple-style-span">9000</font></span></font><font size="3"><span style="color: rgb(69, 69, 69); font-family: 幼圆;">元人民币</span><span style="font-size: 7.5pt; color: rgb(69, 69, 69); line-height: 200%; font-family: Arial;" lang="EN-US"><o:p></o:p></span></font></p>
+
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><font size="3"><b><span style="color: rgb(69, 69, 69); font-family: 幼圆;">电话咨询：</span></b><span style="color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">(021)50803198 </span><span style="color: rgb(69, 69, 69); font-family: 幼圆;">、</span><span style="font-family: Arial;"><span style="color: rgb(69, 69, 69);" lang="EN-US">400-816-1006</span></span></font></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;"><strong><font size="3"><span style="font-family: Arial;"><span style="color: rgb(69, 69, 69);" lang="EN-US">Q&nbsp; Q咨询：</span></span></font></strong><font size="3"><span style="font-family: Arial;"><span style="color: rgb(69, 69, 69);" lang="EN-US">1160515034、1466523858</span></span></font></p>
+<p style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt; line-height: 200%;">&nbsp;</p>
+<span lang="EN-US"><o:p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; line-height: 200%;" align="center">
+</p><table class="MsoNormalTable" style="border: medium none; width: 470.7pt; border-collapse: collapse;" width="628" border="1" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr style="">
+
+            <td style="border: 1pt solid windowtext; padding: 0cm 5.4pt; width: 95.4pt; background-color: transparent;" width="127">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: center;" align="center"><b style=""><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">阶</span></b><b style=""><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US"><span style="">&nbsp;&nbsp; </span></span></b><b style=""><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">段</span></b><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: windowtext windowtext windowtext rgb(248, 243, 244); width: 216pt; background-color: transparent;" width="288">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: center;" align="center"><b style=""><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">课</span></b><b style=""><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US"><span style="">&nbsp;&nbsp;&nbsp; </span></span></b><b style=""><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">程</span></b><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: windowtext windowtext windowtext rgb(248, 243, 244); width: 117pt; background-color: transparent;" width="156">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: center;" align="center"><b style=""><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">目</span></b><b style=""><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US"><span style="">&nbsp;&nbsp; </span></span></b><b style=""><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">标</span></b><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: windowtext windowtext windowtext rgb(248, 243, 244); width: 42.3pt; background-color: transparent;" width="56">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: center;" align="center"><b style=""><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">时间</span></b><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+        </tr>
+
+        <tr style="">
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: rgb(248, 243, 244) windowtext windowtext; width: 95.4pt; background-color: transparent;" rowspan="10" width="127">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: center;" align="center"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">内核源码分析</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: center;" align="center"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">及</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US"><br>
+            </span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">驱动开发实战</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: rgb(248, 243, 244) windowtext windowtext rgb(248, 243, 244); width: 216pt; background-color: transparent;" valign="top" width="288">
+
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">Linux</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">内核设计思想</span></p>
+            </td>
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: rgb(248, 243, 244) windowtext windowtext rgb(248, 243, 244); width: 117pt; background-color: transparent;" rowspan="10" width="156">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: center;" align="center"><span style="font-size: 9pt; color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">Linux</span><span style="font-size: 9pt; color: rgb(69, 69, 69); font-family: 宋体;">内核</span><span style="font-size: 9pt; color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">/</span><span style="font-size: 9pt; color: rgb(69, 69, 69); font-family: 宋体;">驱动开发是嵌入式行业的热点职位，但因其难入门，真正掌握的人并不多，而本课程通过导师多年的实战经验和独到的教学方法，不论实训成员有无内核基础，都能在相对较短的时间内学会内核</span><span style="font-size: 9pt; color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">/</span><span style="font-size: 9pt; color: rgb(69, 69, 69); font-family: 宋体;">驱动开发，从而胜任颇具挑战性和发展空间的高薪职位。</span><span style="font-size: 9pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: rgb(248, 243, 244) windowtext windowtext rgb(248, 243, 244); width: 42.3pt; background-color: transparent;" rowspan="10" width="56">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: Arial;" lang="EN-US">8</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">周</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr style="">
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: rgb(248, 243, 244) windowtext windowtext rgb(248, 243, 244); width: 216pt; background-color: transparent;" valign="top" width="288">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US">Linux</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">系统启动全过程</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+
+            </td>
+        </tr>
+        <tr style="">
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: rgb(248, 243, 244) windowtext windowtext rgb(248, 243, 244); width: 216pt; background-color: transparent;" valign="top" width="288">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US">Linux</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">中断及系统调用</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr style="">
+
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: rgb(248, 243, 244) windowtext windowtext rgb(248, 243, 244); width: 216pt; background-color: transparent;" valign="top" width="288">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US">Linux</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">存储管理</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr style="">
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: rgb(248, 243, 244) windowtext windowtext rgb(248, 243, 244); width: 216pt; background-color: transparent;" valign="top" width="288">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US">Linux</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">进程<span lang="EN-US">/</span>线程调度</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+
+            </td>
+        </tr>
+        <tr style="">
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: rgb(248, 243, 244) windowtext windowtext rgb(248, 243, 244); width: 216pt; background-color: transparent;" valign="top" width="288">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US">Linux</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">文件系统</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr style="">
+
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: rgb(248, 243, 244) windowtext windowtext rgb(248, 243, 244); width: 216pt; background-color: transparent;" valign="top" width="288">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US">Linux</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">设备驱动模型</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr style="">
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: rgb(248, 243, 244) windowtext windowtext rgb(248, 243, 244); width: 216pt; background-color: transparent;" valign="top" width="288">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US">Linux</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">图形驱动开发</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+
+            </td>
+        </tr>
+        <tr style="">
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: rgb(248, 243, 244) windowtext windowtext rgb(248, 243, 244); width: 216pt; background-color: transparent;" valign="top" width="288">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US">Linux</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">以太网驱动开发</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr style="">
+
+            <td style="border-right: 1pt solid windowtext; padding: 0cm 5.4pt; border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: rgb(248, 243, 244) windowtext windowtext rgb(248, 243, 244); width: 216pt; background-color: transparent;" valign="top" width="288">
+            <p class="MsoNormal" style="margin: 0cm 0cm 0pt; line-height: 16.5pt; text-align: left;" align="left"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US">TCP/IP</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;">协议栈的设计与实现</span><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</o:p></span>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt -90pt; text-align: center;"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal" style="background: none repeat scroll 0% 0% white; margin: 0cm 0cm 0pt -90pt; line-height: 18pt; text-align: center;"><span style="font-size: 12pt; color: rgb(69, 69, 69); font-family: 宋体;" lang="EN-US">&nbsp;<o:p></o:p></span>
+<!--在上面添加文章内容-->
+</div>
+
+<b class="rbottom">
+	<b class="r4"></b>
+	<b class="r3"></b>
+	<b class="r2"></b>
+	<b class="r1"></b>
+</b>
+</div>
+</div> <!--end right table-->
+
+</div>
+
+<div align="center">
+<div id = "foot">
+<a href="#">网站地图</a> | <a href="#">人才招聘</a> | <a href="#">关于我们</a> | <br>
+上海市张江高科园区郭守敬路498号浦东软件园21号楼106室　联系电话：021-50803198　400-816-1006 <br>
+灵感软件（上海）有限公司版权所有 <a target="_blank" href="http://www.miibeian.gov.cn">沪ICP备10012836号</a>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="MaxWit,嵌入式,Linux,Android,内核,驱动,培训,gbios,龙芯,就业实训,灵感软件,开放实验室,Conke,Tiger">
+<meta name="description" content="MaxWit,嵌入式,Linux,Android,内核,驱动,培训,gbios,龙芯,就业实训,灵感软件,开放实验室 - maxwit.com">
+<title>MaxWit魔鬼训练营</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<style>
+table.salary{
+	border-color:  red;
+	border-style:   solid;
+	border-collapse:collapse;
+	color:#000000;
+	}
+
+.sth{color: #0000ff;}
+
+table.salary td{
+	border-color:blue;
+	border-style:   solid;
+	border-top-width:   0px;
+	border-right-width:   1px;
+	border-bottom-width:   2px;
+	border-left-width:   0px
+	}
+
+.oddline_color{background-color:#DDD}
+.evenline_color{background-color:#666}
+.hove_color{background-color:#ff0000}
+
+</style>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+	secondLevelShow();
+</script>
+
+</head>
+
+<body class="recu">
+<div id="top">
+	<div class="headtop"></div>
+
+<ul id="nav">
+	<li class="nav_intr"><a href="introduce.html">走进MaxWit</a>
+		<ul>
+			<li><a href="introduce.html?about=overview">MaxWit概况</a></li>
+			<li><a href="contact.html?contact=mode">MaxWit新闻</a></li>
+			<li><a href="introduce.html?about=impression">MaxWit印象</a></li>
+		</ul>
+	</li>
+	<li class="nav_trai"><a href="training.html">课程体系</a>
+		<ul>
+			<li><a href="training.html?class=advanced">课程体系概述</a></li>
+			<li><a href="training.html?class=full_time">就业课程（1个月，免费）</a></li>
+			<li><a href="training.html?class=advanced">中级课程（2个月，MG1）</a></li>
+			<li><a href="training.html?class=advanced">高级课程（4个月，MG2）</a></li>
+			<li><a href="training.html?class=advanced">在职培训</a></li>
+		</ul>
+	</li>
+	<li class="nav_teac"><a href="teacher.html">导师团队</a>
+		<ul>
+			<li><a href="teacher.html?class=advanced">教学特色</a></li>
+			<li><a href="teacher.html?class=advanced">导师介绍</a></li>
+		</ul>
+	</li>
+	<li class="nav_recu"><a href="jiuye.html">招生就业</a>
+		<ul>
+			<li><a href="jiuye.html?recurit=flow">招生简章</a></li>
+			<li><a href="jiuye.html?recurit=flow">报名方式</a></li>
+			<li><a href="jiuye.html?recurit=faq">招生问答</a></li>
+			<li><a href="jiuye.html?recurit=faq">近期开课时间</a></li>
+			<li><a href="jiuye.html?recurit=salary">历届学生就业信息</a></li>
+		</ul>
+	</li>
+	<li><a href="service.html">人才服务</a>
+		<ul>
+			<li><a href="service.html?service=training">企业内部培训</a></li>
+			<li><a href="service.html?service=trust">人才定制（委托培养）</a></li>
+			<li><a href="service.html?service=recommend">人才推荐</a></li>
+			<li><a href="service.html?service=dispatch">人才外派</a></li>
+		</ul>
+	</li>
+	<li><a href="opensour_project.html">开源社区</a>
+		<ul>
+			<li><a href="opensour_project.html?project=gbios">开源项目</a></li>
+			<li><a href="opensour_project.html?project=lablin">Linux百家讲坛</a></li>
+			<li><a href="opensour_project.html?project=powertool">技术论坛(BBS)</a></li>
+			<li><a href="document.html">文档资料</a></li>
+		</ul>
+	</li>
+	<li><a href="document.html">汇智湖畔</a>
+		<ul>
+			<li><a href="introduce.html?about=impression">英语团练</a></li>
+			<li><a href="introduce.html?about=impression">免费影院</a></li>
+			<li><a href="introduce.html?about=impression">体育运动</a></li>
+			<li><a href="introduce.html?about=impression">天马行空</a></li>
+		</ul>
+	</li>
+	<li><a href="contact.html">联系我们</a>
+		<ul>
+			<li><a href="contact.html?contact=mode">联系方式</a></li>
+			<li><a href="contact.html?contact=path">交通路线</a></li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+<div style="overflow:auto; text-align:left; padding-top:5px">
+<div class="left_menu">
+	<ul id="menu3" class="menu">
+		<li class="li_d" id="hg">
+			<a id="id_info" href="#" onclick="show(this, 1)">招生简章</a>
+			<ul>
+				<li><a href="#" onclick="show(this, 2)">MG1招生简章</a>
+				<li><a href="#" onclick="show(this, 3)">MG2招生简章</a>
+				<li><a href="#" onclick="show(this, 4)">MGX招生简章</a>
+			</ul>
+		</li>
+		<li>
+			<a href="#" onclick="show(this, 5)">报名方式</a>
+			<ul>
+				<li><a href="#" onclick="show(this, 6)">报名方式及步骤</a>
+				<li><a href="#" onclick="show(this, 7)">关于报名表及入学申请书</a>
+			</ul>
+		</li>
+		<li>
+			<a href="#" onclick="show(this, 8)">招生问答</a>
+		</li>
+		<li>
+			<a href="#" onclick="show(this, 9)">近期开课时间</a>
+		</li>
+		<li>
+			<a href="#" onclick="show(this, 10)">历届学生就业信息</a>
+			<ul>
+				<li><a href="#" onclick="show(this, 11)">2011年学生就业信息</a>
+				<li><a href="#" onclick="show(this, 12)">2010年学生就业信息</a>
+				<li><a href="#" onclick="show(this, 13)">2009年之前学生就业信息</a>
+			</ul>
+		</li> 
+	</ul>	
+</div> <!--end of left_menu-->
+
+<div class="content">
+<!--在此添加各个文本-->
+<div class="tab">
+
+<div id="tab_1"> 招生简章 </div>
+
+<div id="tab_2">
+	<p>
+		1. 招生对象<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;理工类本科及以上学历(应届或历届均可) 。若无特殊之处,原则上不招收专科及以下学历的学生。</br>
+		2. 开课时间</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;奇数月中旬开班,具体时间见公司主页 (共 2 个月)</br>
+		3. 教学地点</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;上海市浦东新区晨晖路 1000 号(浦东软件园三期)1 号楼。</br>
+		4. 学习费用</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;6800 元人民币</br>
+		5. 咨询热线</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;021-50803198、400-816-1006</br>
+	</p>
+
+</div>
+
+<div id="tab_3">
+目前只接受 MGX 的报名,暂不单独开设 MG2。具体要求请参考 MGX 招生简单!
+</div>
+<div id="tab_4">
+	<p>
+		1. 招生对象<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;理工类本科及以上学历(应届或历届均可) 。若无特殊之处,原则上不招收专科及以下学历的学生。<br/>
+		2. 开课时间<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;奇数月中旬开班,具体时间见公司主页 (共 4 个月)<br/>
+		3. 教学地点<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;上海市浦东新区晨晖路 1000 号(浦东软件园三期)1 号楼。<br/>
+		4. 学习费用<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;16800 元人民币<br/>
+		5. 咨询热线<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;021-50803198、400-816-1006<br/>
+	</p>
+</div>
+<div id="tab_5"> coming soon! </div>
+<div id="tab_6">
+		<div class="msg_sub">报名及入学流程</div>
+
+<p style='margin-top:0px;margin-bottom:0px;padding:0px;line-height:200%;'><span style="font-size: small"><span style="font-size: small"><span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MaxWit<span style="font-family: 宋体">报名方式很简单</span><span lang="EN-US"><font face="Calibri">,</font></span><span style="font-family: 宋体">分二步完成</span><span lang="EN-US"><font face="Calibri">:</font></span></span></span></span></p>
+
+<p style='margin-top:0px;margin-bottom:0px;padding:0px;line-height:200%;'><span style="font-size: small"><span style="font-size: small"><span style="font-family: Arial"><span lang="EN-US"><font face="Calibri"><o:p></o:p></font></span>
+
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal">&nbsp;</p>
+
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体">&nbsp;&nbsp;&nbsp;</span><strong><span style="font-family: 宋体"> 第一步、提交</span><span lang="EN-US"><font face="Calibri">4 </font></span><span style="font-family: 宋体">份报名材料</span><span lang="EN-US"><font face="Calibri">:</font></span><span style="font-family: 宋体">报名表、入学申请书、身份复印件及最高学历</span><span lang="EN-US"><font face="Calibri">/</font></span><span style="font-family: 宋体">学位复印件</span></strong><span lang="EN-US"><o:p></o:p></span><strong><span lang="EN-US"><font face="Calibri">(</font></span><span style="font-family: 宋体">在校生以学生证代</span><span lang="EN-US"><font face="Calibri">)</font></span><span style="font-family: 宋体">。</span></strong><span lang="EN-US"><o:p></o:p></span></p>
+
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体">&nbsp;&nbsp;&nbsp; 复印、扫描或拍摄</span><span lang="EN-US"><font face="Calibri"> (</font></span><span style="font-family: 宋体">可以使用手机</span><span lang="EN-US"><font face="Calibri">) </font></span><span style="font-family: 宋体">身份证及学历</span><span lang="EN-US"><font face="Calibri">/</font></span><span style="font-family: 宋体">学位证或学生证</span><span lang="EN-US"><font face="Calibri">,</font></span><span style="font-family: 宋体">然后将同报名表</span><span style="font-family: 宋体">及入</span><span lang="EN-US"><o:p></o:p></span><span style="font-family: 宋体">学申请书</span><span lang="EN-US"><font face="Calibri"> (<a target="_blank" href="http://www.maxwit.com/msg.php/113.html"><u><span style="color: rgb(0, 0, 255); ">请点击此处查看详情</span></u></a>) </font></span><span style="font-family: 宋体">一起</span><span lang="EN-US"><font face="Calibri">,</font></span><span style="font-family: 宋体">以&nbsp;</span><span lang="EN-US"><font face="Calibri">E-mail </font></span><span style="font-family: 宋体">方式发送到邮箱</span><font face="Calibri"> </font><span style="font-family: 宋体">&ldquo;</span><span style="color: rgb(0, 0, 255); "><span lang="EN-US"><a href="mailto:success@maxwit.com"><font face="Calibri">success@maxwit.com</font></a></span></span><span style="font-family: 宋体">&rdquo;</span><span lang="EN-US"><font face="Calibri">,</font></span><span style="font-family: 宋体">或传真至</span><span lang="EN-US"><o:p></o:p></span><span style="font-family: 宋体">&ldquo;</span><span lang="EN-US"><font face="Calibri">021-50803198</font></span><span style="font-family: 宋体">&rdquo;。</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span lang="EN-US"><font face="Calibri">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;MaxWit </font></span><span style="font-family: 宋体">收到报名材料后</span><span lang="EN-US"><font face="Calibri">,</font></span><span style="font-family: 宋体">将仔细审核全部材料</span><span lang="EN-US"><font face="Calibri">,</font></span><span style="font-family: 宋体">并在一周内回复学生</span><span lang="EN-US"><font face="Calibri">,</font></span><span style="font-family: 宋体">其中通过审核的</span><span lang="EN-US"><o:p></o:p></span><span style="font-family: 宋体">学生将会收到一份预科资料</span><span lang="EN-US"><font face="Calibri">,</font></span><span style="font-family: 宋体">要求在规定的时间内学完。</span></p>
+
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal">&nbsp;</p>
+
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体">&nbsp;&nbsp;&nbsp; </span><strong><span style="font-family: 宋体">第二步、学习预科资料</span><span lang="EN-US"><font face="Calibri">,</font></span><span style="font-family: 宋体">同时汇报学习情况</span></strong><span lang="EN-US"><o:p></o:p></span></p>
+
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体">&nbsp;&nbsp;&nbsp; 学生收到学习资料后</span><span lang="EN-US"><font face="Calibri">,</font></span><span style="font-family: 宋体">必须在规定的时间内学完</span><span lang="EN-US"><font face="Calibri">,</font></span><span style="font-family: 宋体">并汇报学习情况。</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span lang="EN-US"><font face="Calibri">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;MaxWit </font></span><span style="font-family: 宋体">会根据学生的学习情况确定是否录取</span><span lang="EN-US"><font face="Calibri">,</font></span><span style="font-family: 宋体">其中被录取的学生将会收到</span><span lang="EN-US"><font face="Calibri"> MaxWit </font></span><span style="font-family: 宋体">的正</span><span style="font-family: 宋体">式录取通知书</span><span lang="EN-US"><font face="Calibri">!<o:p></o:p></font></span></p>
+
+</span></span></span></p>
+
+<p style='margin-top:0px;margin-bottom:0px;padding:0px;line-height:200%;'>&nbsp;</p></div>
+
+</div>
+
+<div id="tab_7">
+	<div class="msg_sub">关于报名表及入学申请书</div>
+	<p style='margin-top:0px;margin-bottom:0px;padding:0px;line-height:200%;'>
+		<ul>
+		    <li><strong><span style="font-size: larger; ">MaxWit报名表</span></strong></li>
+		</ul>
+		<p style='margin-top:0px;margin-bottom:0px;padding:0px;line-height:200%;'><a href="res/register_fulltime.xls"><span style="color: rgb(0, 0, 255); ">点击此处下载</span></a>并填写报名表,MaxWit 所有全日制班级入学时不分专业方向,所以报名时不必选择。</p>
+		</p>
+		<p style='margin-top:0px;margin-bottom:0px;padding:0px;line-height:200%;'>&nbsp;</p>
+		<ul>
+		    <li><strong><span style="font-size: larger;">MaxWit入学申请</span></strong></li>
+		</ul>
+		<p style='margin-top:0px;margin-bottom:0px;padding:0px;line-height:200%;'>入学申请应至少包括如下要点：<br />
+			1、学习或工作相关背景介绍<br />
+			2、期望在MaxWit能收获到什么<br />
+			3、你选择MaxWit的理由，即MaxWit吸引你的地方<br />
+			4、MaxWit选择你的理由（你认为自己你有哪些优点值得MaxWit录取你）<br />
+			其他可自由发挥,字数不限,可用中文。</p>
+		<p style='margin-top:0px;margin-bottom:0px;padding:0px;line-height:200%;'>请将自己最真实的想法表述出来，切勿写虚！反对&ldquo;党八股&rdquo;，不必&ldquo;为赋新词强说愁&rdquo;。</p>
+		<p style='margin-top:0px;margin-bottom:0px;padding:0px;line-height:200%;'>&nbsp;<span class="Apple-style-span" style="font-size: 17px; "><b><br /> </b></span></p>
+	</p>
+</div>
+
+<div id="tab_8">
+<h1 align="center">招&nbsp&nbsp生&nbsp&nbsp问&nbsp&nbsp答</h1>
+<span style="font-family: 宋体;">问：</span><span style="font-family: Calibri;" lang="EN-US">MaxWit</span><span style="font-family: 宋体;">保证学员就业和薪资吗？</span></span><span style="font-family: Calibri;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: 宋体;">答：否，解决吃饭问题是低端的培训的目标，</span><span style="font-family: Calibri;" lang="EN-US">MaxWit</span><span style="font-family: 宋体;">的目标是培养业界精英。</span><span style="font-family: Calibri;" lang="EN-US">MaxWit</span><span style="font-family: 宋体;">学员从不担心能否顺利就业的问题，但如果培训结束后年薪低于</span><span style="font-family: Calibri;" lang="EN-US">5</span><span style="font-family: 宋体;">万（应届生及毕业</span><span style="font-family: Calibri;" lang="EN-US">1</span><span style="font-family: 宋体;">年）或</span><span style="font-family: Calibri;" lang="EN-US">8</span><span style="font-family: 宋体;">万（毕业</span><span style="font-family: Calibri;" lang="EN-US">2</span><span style="font-family: 宋体;">年以上），可随时全额退费！事实上，只要对</span><span style="font-family: Calibri;" lang="EN-US">MaxWit</span><span style="font-family: 宋体;">的培训质量感到不满，在从开始培训到找到工作的整个过程中，都可无条件全额退费！</span></span><span style="font-family: Calibri;" lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: Calibri;" lang="EN-US"><o:p>&nbsp;</o:p></span></span><span style="font-family: Calibri;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: 宋体;">问：</span><span style="font-family: Calibri;" lang="EN-US">MaxWit</span><span style="font-family: 宋体;">会发给学员类似</span><span style="font-family: Calibri;" lang="EN-US">ARM</span><span style="font-family: 宋体;">或</span><span style="font-family: Calibri;" lang="EN-US">WinCE</span><span style="font-family: 宋体;">的证书吗？</span></span><span style="font-family: Calibri;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: 宋体;">答：哈佛的毕业生需要</span><span style="font-family: Calibri;" lang="EN-US">CET4</span><span style="font-family: 宋体;">证书吗？</span><span style="font-family: Calibri;"> </span><span style="font-family: 宋体;">补一句：</span><span style="font-family: Calibri;" lang="EN-US">MaxWit</span><span style="font-family: 宋体;">的主讲老师均来自一流企业，但他们无一人持有类似证书。</span></span><span style="font-family: Calibri;" lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: Calibri;" lang="EN-US"><o:p>&nbsp;</o:p></span></span><span style="font-family: Calibri;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: 宋体;">问：</span><span style="font-family: Calibri;" lang="EN-US">MaxWit</span><span style="font-family: 宋体;">实际授课老师真如主页上所列吗？</span></span><span style="font-family: Calibri;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: 宋体;">答：是，而且除前期部分基础课程外，全程主讲，手把手式辅导。</span></span><span style="font-family: Calibri;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: Calibri;" lang="EN-US"><o:p>&nbsp;</o:p></span></span><span style="font-family: Calibri;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: 宋体;">问：报考</span><span style="font-family: Calibri;" lang="EN-US">MaxWit</span><span style="font-family: 宋体;">需要什么条件？怎样才能被录取？</span></span><span style="font-family: Calibri;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: 宋体;">答：有</span><span style="font-family: Calibri;" lang="EN-US">C/C++/Java/D</span><span style="font-family: 宋体;">（任一）程序设计基础。经</span><span style="font-family: Calibri;" lang="EN-US">MaxWit</span><span style="font-family: 宋体;">入学考试择优录取。</span></span><span style="font-family: Calibri;" lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: Calibri;" lang="EN-US"><o:p>&nbsp;</o:p></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: Calibri;" lang="EN-US"><o:p>问：考试失败后可重考吗？</o:p></span></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;">答：每一期正式开课前都可重考，且次数不限。我们欣赏在挫折中重新站起来的年轻人！</p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;">&nbsp;</p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: 宋体;">问：</span><span style="font-family: Calibri;" lang="EN-US">MaxWit</span><span style="font-family: 宋体;">使用什么样的开发板？会赠送吗？</span></span><span style="font-family: Calibri;" lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="font-size: small;"><span style="font-family: 宋体;">答：否。</span><span style="font-family: Calibri;" lang="EN-US">MaxWit</span><span style="font-family: 宋体;">每隔</span><span style="font-family: Calibri;" lang="EN-US">2</span><span style="font-family: 宋体;">期左右就更换不同的硬件平台，且与业界高端产品和最新技术保持同步。近期使用</span><span style="font-family: Calibri;" lang="EN-US">PXA168</span><span style="font-family: 宋体;">、</span><span style="font-family: Calibri;" lang="EN-US">S3C6410</span><span style="font-family: 宋体;">和</span><span style="font-family: Calibri;" lang="EN-US">Cortex-A8</span><span style="font-family: 宋体;">等。</span>
+</div>
+<div id="tab_9">
+近期开课情况
+	<ul>
+	    <li><a href="weipei_embedded.html">[免费] “企业定向委培嵌入式开发班”热招 </a></li>
+	    <li><a href="weipei_java.html">[免费] “企业定向委培Java开发班”热招 </a></li>
+	    <li><a href="weipei_cpp.html">[免费] “企业定向委培C++开发班”热招</a></li>
+	    <li><a href="qurizhi_os.html">[全日制] “嵌入式操作系统开发班”7月热招 </a></li>
+	    <li><a href="qurizhi_embedded.html">[全日制] “嵌入式Linux内核/驱动开发班”7月热招 </a></li>
+	    <li><a href="qurizhi_network.html">[全日制] “计算机网络开发班”7月热招</a></li>
+	    <li><a href="qurizhi_mult.html">[全日制] “计算机可视化及多媒体开发班”7月热招</a></li>
+	    <li><a href="workend_linux.html">[周末班] 嵌入式Linux应用开发班7月热招</a></li>
+	    <li><a href="workend_kernel.html">[周末班] Linux内核剖析及驱动开发7月热招</a></li>
+	    <li><a href="workend_advanced.html">[周末班] 嵌入式Linux系统开发进阶7月热招</a></li>
+	<ul>
+</div>
+
+<div id="tab_10"> coming soon! </div>
+
+
+<div id="tab_11"> coming soon! </div>
+
+<div id="tab_12">
+历届学员就业情况统计
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(以下薪资除特别注明外，均为13薪)</div>
+<br>
+<table border=3 cellspacing=0 cellpadding=5 align="center" class="salary">
+    <thead>
+        <tr>
+            <th>姓&nbsp;&nbsp;名</th>
+            <th>公&nbsp;&nbsp;&nbsp;&nbsp;司</th>
+            <th>职&nbsp;&nbsp;&nbsp;&nbsp;位</th>
+            <th>月&nbsp;&nbsp;薪</th>
+            <th>原&nbsp;毕&nbsp;业&nbsp;学&nbsp;校</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>曹福昂</td>
+            <td>奕虎</td>
+            <td>MID内核/驱动开发工程师</td>
+            <td align="right">8K</td>
+            <td>广西工学院(<font color="blue"> 应届本科</font>)</td>
+        </tr>
+        <tr class="sth">
+            <td>陈远全</td>
+            <td>Intel (风河)</td>
+            <td>嵌入式驱动软件工程师</td>
+            <td align="right">(保密)</td>
+            <td>中国地质大学</td>
+        </tr>
+        <tr class="sth">
+            <td>邓海鹏</td>
+            <td>华为(深圳)</td>
+            <td>嵌入式Linux内核工程师</td>
+            <td align="right">8.2K</td>
+            <td>吉林大学</td>
+        </tr>
+        <tr>
+            <td>邓亚明</td>
+            <td>泰克</td>
+            <td>嵌入式软件工程师</td>
+            <td align="right">10K</td>
+            <td>陕西科技大学</td>
+        </tr>
+        <tr>
+            <td>顾旭东</td>
+            <td>杉德金卡</td>
+            <td>Linux驱动工程师</td>
+            <td align="right">7.5K</td>
+            <td>中国科技大学</td>
+        </tr>
+        <tr class="sth">
+            <td>黄&nbsp;&nbsp;&nbsp;&nbsp;双</td>
+            <td>Micron(美光半导体)</td>
+            <td>Linux驱动工程师</td>
+            <td align="right">8K (14薪)</td>
+            <td>北京航空航天大学</td>
+        </tr>
+        <tr>
+            <td>李道俊</td>
+            <td>实达</td>
+            <td>嵌入式软件工程师</td>
+            <td align="right">3K</td>
+            <td>厦门大学</td>
+        </tr>
+        <tr>
+            <td>刘&nbsp;&nbsp;&nbsp;&nbsp;飞</td>
+            <td>明泰科技</td>
+            <td>Linux驱动工程师</td>
+            <td align="right">6.5K</td>
+            <td>江苏大学(应届本科)</td>
+        </tr>
+        <tr>
+            <td>龙其文</td>
+            <td>闻泰电子</td>
+            <td>Linux驱动工程师</td>
+            <td align="right">5K</td>
+            <td>湖南科技学院(应届本科)</td>
+        </tr>
+        <tr>
+            <td>韦昌明</td>
+            <td>重庆航天</td>
+            <td>嵌入式软件工程师</td>
+            <td align="right">4.5K+提成</td>
+            <td>重庆师范大学</td>
+        </tr>
+        <tr>
+            <td>郑天星</td>
+            <td>宽翼通信</td>
+            <td>Linux驱动工程师</td>
+            <td align="right">8K</td>
+            <td>安徽师范大学</td>
+        </tr>
+        <tr>
+            <td>周越新</td>
+            <td>海辉(外派Intel)</td>
+            <td>Intel DHG驱动开发工程师</td>
+            <td align="right">10K</td>
+            <td>江苏技术师范学院</td>
+        </tr>
+        <tr>
+            <td>董&nbsp;&nbsp;&nbsp;&nbsp;滕</td>
+            <td>禹华通信</td>
+            <td>嵌入式Linux内核工程师</td>
+            <td align="right">7.5K</td>
+            <td>西安外事学院(大专)</td>
+        </tr>
+        <tr>
+            <td>葛&nbsp;&nbsp;&nbsp;&nbsp;楠</td>
+            <td>诚迈(外派TCL)</td>
+            <td>Android驱动开发工程师</td>
+            <td align="right">9K (14薪)</td>
+            <td>西安思源学院</td>
+        </tr>
+        <tr class="sth">
+            <td>聂树敏</td>
+            <td>SAMSUNG (三星)</td>
+            <td>Linux驱动工程师</td>
+            <td align="right">5.5K</td>
+            <td>南京农业大学</td>
+        </tr>
+        <tr>
+            <td>韩&nbsp;&nbsp;&nbsp;&nbsp;峰</td>
+            <td>鼎为</td>
+            <td>嵌入式驱动工程师</td>
+            <td align="right">8.5K (16薪)</td>
+            <td>贵州民族学院</td>
+        </tr>
+        <tr class="sth">
+            <td>侯景菊 (女)</td>
+            <td>IBM</td>
+            <td>EFI软件工程师</td>
+            <td align="right">12K(14薪)</td>
+            <td>安徽师范大学</td>
+        </tr>
+        <tr>
+            <td>黄祥和</td>
+            <td>华为(深圳)</td>
+            <td>嵌入式驱动工程师</td>
+            <td align="right">5K</td>
+            <td>华东交通大学(应届本科)</td>
+        </tr>
+        <tr>
+            <td>贾&nbsp;&nbsp;&nbsp;&nbsp;亮</td>
+            <td>华为(上海)</td>
+            <td>嵌入式驱动工程师</td>
+            <td align="right">7.5K</td>
+            <td>上海电力学院</td>
+        </tr>
+        <tr>
+            <td>金东魏</td>
+            <td>威健国际</td>
+            <td>Bootloader软件工程师</td>
+            <td align="right">8K</td>
+            <td>湖南大学</td>
+        </tr>
+        <tr>
+            <td>廖伯钧</td>
+            <td>(保密)</td>
+            <td>项目经理</td>
+            <td align="right">30K(培训前)</td>
+            <td>台湾大学</td>
+        </tr>
+        <tr class="sth">
+            <td>刘&nbsp;&nbsp;&nbsp;&nbsp;敏</td>
+            <td>华为(深圳)</td>
+            <td>嵌入式Linux内核工程师</td>
+            <td align="right">5.2K</td>
+            <td>湖南科技学院(应届本科)</td>
+        </tr>
+        <tr class="sth">
+            <td>龙新辉</td>
+            <td>Intel</td>
+            <td>Linux驱动开发工程师</td>
+            <td align="right">(保密)</td>
+            <td>东南大学(应届硕士)</td>
+        </tr>
+        <tr>
+            <td>齐&nbsp;&nbsp;&nbsp;&nbsp;鹏</td>
+            <td>海辉(外派Intel)</td>
+            <td>Intel DHG驱动开发工程师</td>
+            <td align="right">10K</td>
+            <td>西安电子科技大学</td>
+        </tr>
+        <tr>
+            <td>沈立金</td>
+            <td>上海吉芯电子</td>
+            <td>嵌入式软件工程师</td>
+            <td align="right">5.5K</td>
+            <td>上海海事大学（应届硕士）</td>
+        </tr>
+        <tr>
+            <td>谭昌贤</td>
+            <td>威健国际</td>
+            <td>Bootloader软件工程师</td>
+            <td align="right">5K</td>
+            <td>广西工学院(应届本科)</td>
+        </tr>
+        <tr class="sth">
+            <td>汪&nbsp;&nbsp;&nbsp;&nbsp;猛</td>
+            <td>Sony (索尼)</td>
+            <td>Android软件工程师</td>
+            <td align="right">(保密)</td>
+            <td>厦门大学(应届硕士)</td>
+        </tr>
+        <tr>
+            <td>王&nbsp;&nbsp;&nbsp;&nbsp;敏</td>
+            <td>海辉(外派Intel)</td>
+            <td>Intel DHG驱动开发工程师</td>
+            <td align="right">7.5K</td>
+            <td>江苏大学</td>
+        </tr>
+        <tr>
+            <td>王&nbsp;&nbsp;&nbsp;&nbsp;胜</td>
+            <td>(自己创业)</td>
+            <td>N/A</td>
+            <td align="right">N/A</td>
+            <td>University of Pennsylvania</td>
+        	<!--美国宾夕法尼亚大学-->
+        </tr>
+        <tr>
+            <td>武&nbsp;&nbsp;&nbsp;&nbsp;硕 (女)</td>
+            <td>(保密)</td>
+            <td>手机底层软件开发工程师</td>
+            <td align="right">6K</td>
+            <td>武汉大学</td>
+        </tr>
+        <tr>
+            <td>夏威猛</td>
+            <td>华为(武汉)</td>
+            <td>Linux应用软件开发工程师</td>
+            <td align="right">4.5K</td>
+            <td>华中师范大学</td>
+        </tr>
+        <tr class="sth">
+            <td>方&nbsp;&nbsp;&nbsp;&nbsp;晶</td>
+            <td>HTC (宏达)</td>
+            <td>Linux驱动工程师</td>
+            <td align="right">7.8K (17~21薪)</td>
+            <td>福建师范大学</td>
+        </tr>
+        <tr>
+            <td>张士勇</td>
+            <td>海辉(外派Intel)</td>
+            <td>Intel DHG驱动开发工程师</td>
+            <td align="right">12K</td>
+            <td>上海海事大学</td>
+        </tr>
+        <tr class="sth">
+            <td>黄&nbsp;&nbsp;&nbsp;&nbsp;诚</td>
+            <td>HTC (宏达)</td>
+            <td>Linux驱动工程师</td>
+            <td align="right">7.2K (17~21薪)</td>
+            <td>苏州科技大学</td>
+        </tr>
+        <tr>
+            <td>许立钦</td>
+            <td>奕虎</td>
+            <td>MID内核/驱动开发工程师</td>
+            <td align="right">5K</td>
+            <td>湖南科技学院(应届本科)</td>
+        </tr>
+        <tr>
+            <td>张铮铮</td>
+            <td>成都交大光芒</td>
+            <td>嵌入式研发工程师</td>
+            <td align="right">2.8K</td>
+            <td>内江师范学院(应届本科)</td>
+        </tr>
+        <tr>
+            <td>周传刚</td>
+            <td>奕虎</td>
+            <td>MID内核/驱动开发工程师</td>
+            <td align="right">7K</td>
+            <td>解放军信息工程大学</td>
+        </tr>
+        <tr>
+            <td>朱凯跃</td>
+            <td>企顺(外派Intel)</td>
+            <td>Intel MeeGo软件工程师</td>
+            <td align="right">7.5K</td>
+            <td>浙江大学</td>
+        </tr>
+        <tr>
+            <td>朱义峰</td>
+            <td>新名望</td>
+            <td>手机软件开发工程师</td>
+            <td align="right">5K</td>
+            <td>日照职业技术学校(应届大专)</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div id="tab_13">
+Update ...
+</div>
+
+</div> <!--end right table-->
+</div>
+
+</div>
+
+<div align="center">
+<div id = "foot">
+灵感软件（上海）有限公司版权所有 <a target="_blank" href="http://www.miibeian.gov.cn">沪ICP备10012836号</a>
+</div>
+</div>
+</body>
+</html>

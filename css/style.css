@@ -1,0 +1,307 @@
+body {
+	font: normal .8em/1.5em Arial, Helvetica, sans-serif;
+	font-size:12px;
+	line-height:24px;
+	background: #ebebeb;
+	width: 1000px;
+	margin: auto;
+	color: #666;
+}
+
+#top{
+	position:relative;
+	width:100%;
+	margin:0 auto;
+	border-left:#c5d4db 1px solid;
+	border-right:#c5d4db 1px solid;
+	z-index: 99;
+}
+#top .headtop{
+	height:101px;
+	background:#fff url("../images/toplogo.jpg") repeat-x;
+}
+
+.headtop .logo{
+	float:left;
+	width: 460px;
+}
+
+a {
+	color: #333;
+}
+
+.toplab {
+	color: #0f0f0f;
+}
+
+#nav {
+	margin: 0;
+	padding: 7px 6px 0;
+	font-size:13px;
+	background: #7d7d7d url(images/gradient.png) repeat-x 0 -110px;
+	line-height: 100%;
+	height: 40px;
+
+/*
+	border-radius: 2em;
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+*/
+
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0, .4);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);
+}
+#nav li {
+	margin: 0 5px;
+	padding: 0 0 8px;
+	float: left;
+	position: relative;
+	list-style: none;
+	_display: inline-block;
+}
+
+
+/* main level link */
+#nav a {
+	font-weight: bold;
+	color: #e7e5e5;
+	text-decoration: none;
+	display: block;
+	padding:  8px 20px;
+	margin: 0;
+
+	-webkit-border-radius: 1.6em;
+	-moz-border-radius: 1.6em;
+
+	text-shadow: 0 1px 1px rgba(0,0,0, .3);
+}
+#nav a:hover {
+	background: #000;
+	color: #fff;
+}
+
+/* main level link hover */
+
+.introduce #nav .nav_intr a,
+.document  #nav .nav_docu a,
+.training  #nav .nav_trai a,
+.service   #nav .nav_serv a,
+.opensource #nav .nav_open a,
+.contact   #nav .nav_cont a,
+.teacher   #nav .nav_teac a,
+.recu #nav .nav_recu a {
+	color: #000F00;
+}
+
+/*
+.introduce #nav .nav_intr a,
+.recu #nav .nav_recu a,
+*/
+#nav .current a, #nav li:hover > a {
+	background: #666 url(images/gradient.png) repeat-x 0 -40px;
+	color: #444;
+	border-top: solid 1px #f8f8f8;
+
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0, .2);
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0, .2);
+	box-shadow: 0 1px 1px rgba(0,0,0, .2);
+
+	text-shadow: 0 1px 0 rgba(255,255,255, 1);
+}
+
+/* sub levels link hover */
+#nav ul li:hover a, #nav li:hover li a {
+	background: none;
+	border: none;
+	color: #666;
+
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+#nav ul a:hover {
+	background: #000000 url(images/gradient.png) repeat-x 0 -100px !important;
+	color: #fff !important;
+
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+
+	text-shadow: 0 1px 1px rgba(0,0,0, .1);
+}
+
+/* dropdown : if don't use jquery, you need use css code as follow, otherwith level 2 invisible*/
+/*
+#nav li:hover > ul {
+	display: block;
+}
+*/
+
+/* level 2 list */
+#nav ul {
+	display: none;
+
+	margin: 0;
+	padding: 0;
+	width: 185px;
+	position: absolute;
+	z-index:9999;
+	top: 35px;
+	left: 0;
+	background: #ddd url(images/gradient.png) repeat-x 0 0;
+	border: solid 1px #b4b4b4;
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0, .3);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0, .3);
+	box-shadow: 0 1px 3px rgba(0,0,0, .3);
+}
+#nav ul li {
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+
+#nav ul a {
+	_color: #000;
+	font-weight: normal;
+	text-shadow: 0 1px 0 #fff;
+}
+
+/* level 3+ list */
+#nav ul ul {
+	left: 181px;
+	top: -3px;
+}
+
+/* rounded corners of first and last link */
+#nav ul li:first-child > a {
+	-webkit-border-top-left-radius: 9px;
+	-moz-border-radius-topleft: 9px;
+
+	-webkit-border-top-right-radius: 9px;
+	-moz-border-radius-topright: 9px;
+}
+#nav ul li:last-child > a {
+	-webkit-border-bottom-left-radius: 9px;
+	-moz-border-radius-bottomleft: 9px;
+
+	-webkit-border-bottom-right-radius: 9px;
+	-moz-border-radius-bottomright: 9px;
+}
+
+/* clearfix */
+#nav:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+#nav {
+	display: inline-block;
+}
+
+li {
+	margin: 5px 0 0 0;
+}
+
+html[xmlns] #nav {
+	display: block;
+}
+
+* html #nav {
+	height: 1%;
+}
+
+#foot{
+	position:relative;
+	width:100%;
+	font-size:14px;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+.msg_sub{
+	font-size:18px;
+	text-align: center;
+}
+
+
+/*homepage's right table css*/
+.content{
+	width=70%
+	padding-left:10px;
+	position: relative;
+	text-align: left;
+	overflow: auto;
+	*float:right; /*only for IE6 & IE7*/
+	background:#ffffff;
+}
+
+.content .tab{
+	width: 98%;
+	position:relative;
+	border-right: #b5cfe8 0px solid;
+	border-left: #b5cfe8 0px solid;
+	border-top: #b5cfe8 0px solid;
+	border-bottom: #b5cfe8 0px solid;
+	float:right;
+}
+
+#tab_1, #tab_2, #tab_3, #tab_4, #tab_5, #tab_6, #tab_7, #tab_8, #tab_9, #tab_10, #tab_11, #tab_12, #tab_13, #tab_14, #tab_15, #tab_16, #tab_17, #tab_18, #tab_19{
+	display:none;
+	overflow:auto;
+	font-size:16px;
+	width: 98%;
+	min-height: 350px;
+}
+#tab_1{
+	display:block;
+}
+
+.left_menu{
+	float:left;
+	overflow:auto;
+	width = 35%;
+}
+ul.menu, ul.menu ul {
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  width: 15em;
+}
+
+ul.menu a {
+  display: block;
+  text-decoration: none;	
+}
+
+ul.menu li {
+  margin-top: 1px;
+  _display: inline-block;
+}
+
+ul.menu li a {
+  background: #333;
+  color: #fff;	
+  padding: 0.5em;
+}
+
+ul.menu li a:hover {
+  background: #000;
+}
+
+ul.menu li ul li a {
+  background: #ccc;
+  color: #000;
+  padding-left: 20px;
+}
+
+ul.menu li ul li a:hover {
+  background: #aaa;
+  border-left: 5px #000 solid;
+  padding-left: 15px;
+}
