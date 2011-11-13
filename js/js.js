@@ -47,6 +47,15 @@ function secondLevelShow(){
 				}
 			}
 		);
+
+		// check slide option
+		var url = location.search; //获取url中"?"符后的字串
+		if (url.indexOf("?") != -1) {
+			var strs = url.split("=");
+			var tag_name = "#id_" + strs[1];
+
+			$(tag_name).click();
+		}
 	});
 }
 
